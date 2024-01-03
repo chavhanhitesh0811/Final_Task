@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const taskController_1 = require("../controller/taskController");
+const router = (0, express_1.Router)();
+router.route("/create-shift-schedule").post(taskController_1.createShiftSchedule);
+router.route("/add-staff-member").post(taskController_1.createStaffMember);
+router.route("/assign-staff-to-shifts").put(taskController_1.assignStaffToShifts);
+router.route("/view-shift-details").get(taskController_1.viewShiftDetails);
+router.route("/update-shift-details").put(taskController_1.updateShiftDetails);
+router.route("/view-staff-detail").get(taskController_1.viewStaffDetails);
+router.route("/update-staff-details").put(taskController_1.updateStaffDetails);
+router.route("/delete-staff").delete(taskController_1.deleteStaff);
+router.route("/view-all-staff").get(taskController_1.viewAllStaffs);
+router.route("/view-all-shift").get(taskController_1.viewAllShifts);
+exports.default = router;
